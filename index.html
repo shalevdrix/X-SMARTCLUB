@@ -13,9 +13,9 @@
 
 <style>
   :root{
-    --burgundy: #6E1B2C;
-    --gold:     #C5A572;
-    --cream:    #F8F2E4;
+    --burgundy: #000000;     /* was burgundy, now black for headers/emphasis */
+    --gold:     #FFD60A;     /* was gold, now vibrant yellow for accents */
+    --cream:    #FFFFFF;     /* was cream, now white background */
     --ink:      #000000;
     --muted:    #000000;
   }
@@ -41,7 +41,7 @@
   .header{
     text-align: center;
     padding-bottom: 48px;
-    border-bottom: 1px solid var(--gold);
+    border-bottom: 3px solid var(--gold);
     margin-bottom: 48px;
   }
 
@@ -75,16 +75,19 @@
   .section{ margin-bottom: 40px; }
 
   h2{
+    display: table;
     font-size: 1.15rem;
     font-weight: 600;
-    color: var(--burgundy);
-    margin-bottom: 16px;
+    color: var(--ink);
+    background: var(--gold);
+    padding: 6px 14px;
+    margin-bottom: 18px;
     letter-spacing: -0.005em;
+    border-radius: 3px;
   }
   h2 .num{
-    color: var(--burgundy);
     font-weight: 700;
-    margin-right: 10px;
+    margin-right: 8px;
   }
 
   .section p{
@@ -101,17 +104,21 @@
   .footer{
     margin-top: 56px;
     padding-top: 32px;
-    border-top: 1px solid var(--gold);
+    border-top: 3px solid var(--gold);
     text-align: center;
   }
-  .footer a{
-    color: var(--burgundy);
+  .email{
+    color: var(--ink);
     text-decoration: none;
     font-weight: 600;
-    border-bottom: 1px solid var(--gold);
-    padding-bottom: 1px;
+    background: linear-gradient(var(--gold), var(--gold)) no-repeat 0 100% / 100% 3px;
+    padding: 2px 4px 4px;
+    transition: background-size 0.25s ease, padding 0.25s ease;
+    white-space: nowrap;
   }
-  .footer a:hover{ color: var(--ink); }
+  .email:hover{
+    background-size: 100% 100%;
+  }
   .copy{
     margin-top: 20px;
     font-size: 0.85rem;
@@ -125,7 +132,7 @@
     h1{ font-size: 1.5rem; }
   }
 
-  ::selection{ background: var(--burgundy); color: var(--cream); }
+  ::selection{ background: var(--gold); color: var(--ink); }
 </style>
 </head>
 <body>
@@ -133,7 +140,6 @@
 <main class="wrap">
 
   <header class="header">
-    <img src="logo.png" alt="X-SmartClub" class="logo">
     <h1>Terms &amp; Conditions</h1>
     <div class="updated">Last updated: May 16, 2026</div>
   </header>
@@ -178,11 +184,10 @@
 
   <section class="section">
     <h2><span class="num">6.</span>Contact Us</h2>
-    <p>If you have any questions about these Terms and Conditions, You can contact us by email:</p>
+    <p>If you have any questions about these Terms and Conditions, You can contact us by email: <a href="mailto:xsmartclub@gmail.com" class="email">xsmartclub@gmail.com</a></p>
   </section>
 
   <footer class="footer">
-    <a href="mailto:xsmartclub@gmail.com">xsmartclub@gmail.com</a>
     <div class="copy">© X-SmartClub · All rights reserved</div>
   </footer>
 
